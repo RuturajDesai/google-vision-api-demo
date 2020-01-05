@@ -19,10 +19,40 @@
       <%= file_field_tag :file, id: "imgInp", style: "margin:auto;", class: "imported_file", accept: "image/*" %>
     </div>
 
-    <button type="submit" style="margin: 0px">SUBMIT</button>
+    <button type="submit" id="submit_form" style="margin: 0px">SUBMIT</button>
   <% end %>
 
   <div id="image_container">
     <%= render partial: "shared/image_view" %>
   </div>
 </div>
+
+<div class='loading_spiner'>
+  <%= image_tag('iconBusy.gif', class: "img") %>
+</div>
+
+<style>
+  .loading_spiner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    display: none;
+    height: 100%;
+    z-index: 1; 
+  }
+  .img{
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+  }
+</style>
+
+<script>
+  $('#image_upload_form').submit(function() {
+      $('.loading_spiner').show();
+  });
+</script>
