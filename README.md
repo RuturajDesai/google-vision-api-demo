@@ -1,24 +1,24 @@
-# README
+## Gogole Vision API test project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## Current features:
+* Read Text from Loacl image
+* Read Text from Remote image URL
+* Upload image to S3
 
-* System dependencies
 
-* Configuration
+## Pre-reqs
+* Ruby 2.6.0
+* PostgreSQL
+ 
+## Installation instructions for development:
+1. Clone repository
+1. Run `cp config/database.yml.sample config/database.yml` (replace username with your current username)
+1. Add googl_key.json to project root folder
+1. Run `cp .env.sample .env` (Update variables)
+1. Run `bundle install`
+1. Run `bundle exec rake db:create`
+1. Run `bundle exec rake db:migrate`
+1. Run `rails s` to star the server
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
