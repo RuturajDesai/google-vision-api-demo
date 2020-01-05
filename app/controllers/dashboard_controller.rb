@@ -10,6 +10,12 @@ class DashboardController < ApplicationController
     if !params[:image_url].blank?
       @image_path = params[:image_url]
       @image_text_array = GoogleVision.detect_text_gcs(params[:image_url])
+
+      image_file = ImageList.new
+      image_file.remote_image_path_url = params[:image_url]
+      image_file.text_data = @image_text_array.to_json
+      image_file.save!
+
     elsif !params[:file].blank?
       
       File.open(params[:file].tempfile, 'rb') do |file|
