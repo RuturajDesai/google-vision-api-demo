@@ -10,8 +10,16 @@
     <tbody>
       <% @image_list.each do |image|%>
         <tr> 
-          <td><%= image.id%></td> 
-          <td><%= image.image_name%></td> 
+          <td>
+            <%= link_to dashboard_show_selected_image_path(id: image.id), remote: true do %>
+              <%= image.id%>
+            <% end %>
+          </td> 
+          <td>
+            <%= link_to dashboard_show_selected_image_path(id: image.id), remote: true do %>
+              <%= image.image_name%>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
@@ -19,6 +27,7 @@
 </div>
 
 <style>
+
 .view_container{
   margin: 10px;
 }

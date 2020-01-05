@@ -33,4 +33,14 @@ class DashboardController < ApplicationController
     end
     @image_list = ImageList.all
   end
+
+  def show_selected_image
+    image_file = ImageList.find_by(id: params[:id])
+
+    unless image_file.blank?
+      @image_path = image_file.image_path
+
+      @image_text_array = JSON.parse(image_file.text_data)
+    end
+  end
 end
