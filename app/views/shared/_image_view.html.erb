@@ -1,0 +1,33 @@
+<h5 style="margin-top: 15px;">Selected Image</h5>
+<div class="image_container">
+  <img class="image_view" id="blah" src="<%= @image_path%>" alt="Image will be displayed here" />
+</div>
+<h5 style="margin-top: 15px;">Selected Image Text</h5>
+<div class="text_container">
+  <% unless @image_text_array.blank?%>
+    <% @image_text_array.each do |text|%>
+      <p><%= text%></p>
+    <%end%>
+  <%end%>
+</div>
+
+<style>
+  .image_container{
+    height: 300px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+  }
+  .image_view{
+    height: 300px;
+    object-fit: scale-down;
+  }
+
+  .text_container{
+    background-color: gray;
+    height: 300px;
+  }
+</style>
