@@ -30,6 +30,8 @@ gem 'jquery-ui-rails'
 gem 'dotenv'
 gem 'dotenv-rails'
 
+gem "pg"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

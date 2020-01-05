@@ -1,0 +1,2 @@
+class ImageList < ApplicationRecord
+end
