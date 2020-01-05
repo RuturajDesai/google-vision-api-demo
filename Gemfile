@@ -31,6 +31,9 @@ gem 'dotenv'
 gem 'dotenv-rails'
 
 gem "pg"
+gem 'carrierwave', '~> 2.0'
+gem "aws-sdk"
+gem "fog"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

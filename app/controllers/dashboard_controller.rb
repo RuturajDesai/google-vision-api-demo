@@ -15,7 +15,12 @@ class DashboardController < ApplicationController
       File.open(params[:file].tempfile, 'rb') do |file|
         @image_text_array = GoogleVision.detect_text(file)
       end
-      @image_path = ''
+      image_file = ImageList.new
+      image_file.image_path = params[:file]
+      image_file.image_name = params[:file].original_filename
+      image_file.text_data = @image_text_array.to_json
+      image_file.save!
+      @image_path = image_file.image_path
     else
       
     end
