@@ -1,0 +1,65 @@
+<div class="view_container">
+  <h3>Subimitted Images List</h3>
+  <table class="index_table">
+    <thead>
+    <tr> 
+      <th>ID</th>
+      <th>Image Name</th> 
+    </tr> 
+    </thead>
+    <tbody>
+      <% @image_list.each do |image|%>
+        <tr> 
+          <td>
+            <div class="image_container">
+              <img class="image_view" id="blah" src="<%= image.image_path%>" alt="Image will be displayed here" />
+            </div>
+          </td> 
+          <td>
+            <div class="text_container">
+              <% unless image.text_data.blank?%>
+                <% JSON.parse(image.text_data).each do |text|%>
+                  <div><%= text%></div>
+                <%end%>
+              <%end%>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<style>
+
+.view_container{
+  margin: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+.image_container{
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+  }
+  .image_view{
+    height: 100px;
+    object-fit: scale-down;
+  }
+
+</style>

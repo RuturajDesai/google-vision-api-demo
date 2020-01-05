@@ -23,7 +23,7 @@ module GoogleVision
     image_annotator = Google::Cloud::Vision::ImageAnnotator.new
 
     # [START vision_text_detection_migration]
-    response = image_annotator.text_detection(
+    response = image_annotator.document_text_detection(
       image:       image_path,
       max_results: 1 # optional, defaults to 10
     )
@@ -50,7 +50,7 @@ module GoogleVision
 
     image_annotator = Google::Cloud::Vision::ImageAnnotator.new
 
-    response = image_annotator.text_detection(
+    response = image_annotator.document_text_detection(
       image:       image_path,
       max_results: 1 # optional, defaults to 10
     )

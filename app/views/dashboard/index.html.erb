@@ -1,28 +1,28 @@
-<h1>Google Vision API Example</h1>
-
-<div style="display: flex;">
+<div style="display:flex">
   <div style="width: 50%">
-    <%= form_tag dashboard_import_image_path, id: 'image_upload_form', multipart: true, class: 'form', remote: true do %>
-
-      <div>
-        <%= text_field_tag :image_url, nil,  autocomplete:"disable", placeholder:"Enter URL", id: 'image_url', style:"width: 400px;" %>
-      </div>
-      <div>
-        OR
-      </div>
-      <div>
-        <%= file_field_tag :file, id: "imgInp", style: "margin:auto;", class: "imported_file", accept: "image/*" %>
-      </div>
-
-      <button type="submit" style="margin: 0px">SUBMIT</button>
-    <% end %>
-
-    <div id="image_container">
-      <%= render partial: "shared/image_view" %>
-    </div>
+    <h1>Google Vision API Example</h1>
   </div>
+  <div style="width: 50%; margin-top: 25px;">
+    <%= link_to 'Display previous results', image_list_path %>
+  </div>
+</div>
 
-  <div id="image_list_container" style="width: 50%">
-    <%= render partial: "shared/image_list"%>
+<div>
+  <%= form_tag dashboard_import_image_path, id: 'image_upload_form', multipart: true, class: 'form', remote: true do %>
+    <div>
+      <%= text_field_tag :image_url, nil,  autocomplete:"disable", placeholder:"Enter URL", id: 'image_url', style:"width: 400px;" %>
+    </div>
+    <div>
+      OR
+    </div>
+    <div>
+      <%= file_field_tag :file, id: "imgInp", style: "margin:auto;", class: "imported_file", accept: "image/*" %>
+    </div>
+
+    <button type="submit" style="margin: 0px">SUBMIT</button>
+  <% end %>
+
+  <div id="image_container">
+    <%= render partial: "shared/image_view" %>
   </div>
 </div>

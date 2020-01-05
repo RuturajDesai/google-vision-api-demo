@@ -3,7 +3,6 @@ class DashboardController < ApplicationController
     # GoogleVision.detect_text(ActionController::Base.helpers.image_path('sign_text.png'))
 
     # GoogleVision.detect_text_gcs('gs://cloud-samples-data/vision/ocr/sign.jpg')
-    @image_list = ImageList.all
   end
 
   def import_image
@@ -31,9 +30,11 @@ class DashboardController < ApplicationController
     else
       
     end
-    @image_list = ImageList.all
   end
 
+  def image_list
+    @image_list = ImageList.all
+  end
   def show_selected_image
     image_file = ImageList.find_by(id: params[:id])
 
