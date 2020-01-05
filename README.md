@@ -1,10 +1,12 @@
 ## Gogole Vision API test project
-
+Framework used: Ruby On Rails
+Cloud Storege: AWS S3 bucket
+Google Vision API: document_text_detection api
 
 
 ## Current features:
-* Read Text from Loacl image
-* Read Text from Remote image URL
+* Detect Text from Loacl image
+* Detect Text from Remote image URL
 * Upload image to S3
 
 
@@ -23,3 +25,7 @@
 1. Run `bundle exec rake db:migrate`
 1. Run `rails s` to star the server
 
+
+## assumptions made
+1. Diplay image and detected text in the table format on different screen.
+2. upload both loacl and remote images to AWS S3 bucket.
