@@ -16,7 +16,7 @@ class DashboardController < ApplicationController
       image_file.remote_image_path_url = params[:image_url]
       image_file.text_data = @image_text_array.to_json
       image_file.save!
-
+      @image_path = image_file.image_path
     elsif !params[:file].blank?
       
       File.open(params[:file].tempfile, 'rb') do |file|
@@ -31,5 +31,6 @@ class DashboardController < ApplicationController
     else
       
     end
+    @image_list = ImageList.all
   end
 end
