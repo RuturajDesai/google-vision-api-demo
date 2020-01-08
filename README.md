@@ -12,7 +12,7 @@ Google Vision API: document_text_detection api
 
 ## Pre-reqs
 * Ruby 2.6.0
-  recommended: User RVM: https://rvm.io/rvm/install 
+  recommended: Use RVM: https://rvm.io/rvm/install 
 * PostgreSQL
  
 ## Installation instructions for development:
