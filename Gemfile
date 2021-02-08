@@ -31,7 +31,7 @@ gem 'dotenv'
 gem 'dotenv-rails'
 
 gem "pg"
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem "aws-sdk"
 gem "fog"
 
